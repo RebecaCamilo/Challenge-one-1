@@ -38,3 +38,22 @@ function encryptor() {
     alert(encryptedPhrase);
 
 }
+
+
+function changeElements() {
+    var section = document.getElementsByClassName('main-content__result')[0];
+    var section2 = document.getElementsByClassName('main-content__result')[1];
+    var boyImage = document.getElementById('boy-image');
+    var resultText = section.children[1];
+
+    // Cria um novo elemento para substituir elemento1
+    var newElement = document.createElement('textarea');
+
+    // Substitui elemento1 pelo newElement
+    section.replaceChild(newElement, boyImage);
+
+    // Remove resultText
+    section2.removeChild(resultText);
+
+    alert("done");
+}
