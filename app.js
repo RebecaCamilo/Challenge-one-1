@@ -39,21 +39,16 @@ function encryptor() {
 
 }
 
-
 function changeElements() {
-    var section = document.getElementsByClassName('main-content__result')[0];
-    var section2 = document.getElementsByClassName('main-content__result')[1];
-    var boyImage = document.getElementById('boy-image');
-    var resultText = section.children[1];
-
-    // Cria um novo elemento para substituir elemento1
-    var newElement = document.createElement('textarea');
-
-    // Substitui elemento1 pelo newElement
-    section.replaceChild(newElement, boyImage);
-
-    // Remove resultText
-    section2.removeChild(resultText);
-
-    alert("done");
-}
+    // Seleciona a seção e remove todos os elementos filhos
+    const sectionResult = document.querySelector('.main-content__result');
+    sectionResult.innerHTML = '';
+  
+    // Cria um novo textarea
+    const newTextArea = document.createElement('textarea');
+    newTextArea.setAttribute('id', 'textoDescriptografado');
+    newTextArea.setAttribute('placeholder', 'Texto descriptografado');
+  
+    // Adiciona o novo textarea à seção
+    sectionResult.appendChild(newTextArea);
+  }
