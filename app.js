@@ -38,6 +38,8 @@ function encryptor() {
     removeElementsFromResultSection();
 
     createNewTextareaAndCopyUserInput(encryptedPhrase);
+    
+    addButtonCopiar();
 
     alert(encryptedPhrase);
 
@@ -66,3 +68,19 @@ function createNewTextareaAndCopyUserInput(encryptedPhrase) {
     // Adiciona o texto criptografado ao textarea
     newTextArea.value = encryptedPhrase;
   }
+
+  
+function addButtonCopiar() {
+    const sectionResult = document.querySelector('.main-content__result');
+
+    // Cria um novo button
+    const newButton = document.createElement('button');
+    newButton.setAttribute('id', 'copyButton');
+    newButton.textContent = 'Copiar';
+
+    // Adiciona a classe à textarea
+    newButton.classList.add('main-content__result-button');
+
+    // Adiciona o novo textarea à seção
+    sectionResult.appendChild(newButton);
+}
