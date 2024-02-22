@@ -35,20 +35,34 @@ function encryptor() {
         }
     }
 
+    removeElementsFromResultSection();
+
+    createNewTextareaAndCopyUserInput(encryptedPhrase);
+
     alert(encryptedPhrase);
 
 }
 
-function changeElements() {
+function removeElementsFromResultSection() {
     // Seleciona a seção e remove todos os elementos filhos
     const sectionResult = document.querySelector('.main-content__result');
     sectionResult.innerHTML = '';
-  
+}
+
+function createNewTextareaAndCopyUserInput(encryptedPhrase) { 
+    const sectionResult = document.querySelector('.main-content__result');
+
     // Cria um novo textarea
     const newTextArea = document.createElement('textarea');
-    newTextArea.setAttribute('id', 'textoDescriptografado');
-    newTextArea.setAttribute('placeholder', 'Texto descriptografado');
+    newTextArea.setAttribute('id', 'decryptTextarea');
+    newTextArea.setAttribute('readonly', 'readonly');
+
+    // Adiciona a classe à textarea
+    newTextArea.classList.add('content__result__textarea');
   
     // Adiciona o novo textarea à seção
     sectionResult.appendChild(newTextArea);
+
+    // Adiciona o texto criptografado ao textarea
+    newTextArea.value = encryptedPhrase;
   }
