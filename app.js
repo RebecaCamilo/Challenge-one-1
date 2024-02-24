@@ -41,8 +41,6 @@ function encryptor() {
     
     addButtonCopiar();
 
-    alert(encryptedPhrase);
-
 }
 
 function removeElementsFromResultSection() {
@@ -102,3 +100,26 @@ function copyToClipboard(elementId) {
         alert('Não foi possível copiar o texto para a área de transferência: ', err);
     });
 }
+
+function decryptor() {
+    let encryptedPhrase = document.querySelector('textarea').value;
+    // let decryptTextarea = document.getElementById('decryptTextarea').value;
+
+    const regrasSubstituicao = [
+        { padrao: /ai/g, substituicao: 'a' },
+        { padrao: /enter/g, substituicao: 'e' },
+        { padrao: /imes/g, substituicao: 'i' },
+        { padrao: /ober/g, substituicao: 'o' },
+        { padrao: /ufat/g, substituicao: 'u' }
+    ];
+  
+    for (const regra of regrasSubstituicao) {
+        encryptedPhrase = encryptedPhrase.replace(regra.padrao, regra.substituicao);
+    }
+  
+    // Obtém o elemento HTML onde você deseja exibir a mensagem descriptografada
+    let decryptTextarea = document.getElementById('decryptTextarea');
+
+    // Define o texto descriptografado como o texto do elemento HTML
+    decryptTextarea.value = encryptedPhrase;
+  }
