@@ -68,7 +68,6 @@ function createNewTextareaAndCopyUserInput(encryptedPhrase) {
     // Adiciona o texto criptografado ao textarea
     newTextArea.value = encryptedPhrase;
   }
-
   
 function addButtonCopiar() {
     const sectionResult = document.querySelector('.main-content__result');
@@ -81,6 +80,25 @@ function addButtonCopiar() {
     // Adiciona a classe à textarea
     newButton.classList.add('main-content__result-button');
 
+    // Adiciona o evento click ao botão
+    newButton.addEventListener('click', function() {
+        copyToClipboard('decryptTextarea');
+    });
+
     // Adiciona o novo textarea à seção
     sectionResult.appendChild(newButton);
+}
+
+function copyToClipboard(elementId) {
+    // Seleciona o elemento com o ID especificado
+    const element = document.getElementById(elementId);
+
+    // Copia o texto do elemento para a área de transferência do usuário
+    navigator.clipboard.writeText(element.value) // Use element.value em vez de element.innerText
+    .then(() => {
+      alert('Texto copiado para a área de transferência');
+    })
+    .catch(err => {
+        alert('Não foi possível copiar o texto para a área de transferência: ', err);
+    });
 }
