@@ -1,3 +1,11 @@
+const textareaInput = document.querySelector('textarea');
+
+textareaInput.addEventListener('keypress', function (event) {
+    if (!/[a-zç,.]/.test(event.key)) {
+        event.preventDefault();
+    }
+});
+
 function encryptor() {
     let phrase = document.querySelector('textarea').value;
 
