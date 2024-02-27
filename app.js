@@ -1,6 +1,9 @@
 const textareaInput = document.querySelector('textarea');
 
-textareaInput.addEventListener('keypress', function (event) {
+textareaInput.addEventListener('keydown', function (event) {
+    if (event.key === " ") {
+        return;
+    }
     if (!/[a-zç,.]/.test(event.key)) {
         event.preventDefault();
     }
