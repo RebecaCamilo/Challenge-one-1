@@ -154,9 +154,16 @@
     .main-content {
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
+    }
+
+    .main-content__principal__textarea-container {
+        width: 100%;
+        height: 300px;
     }
 
     .main-content__principal {
+        margin: 0;
         width: 90%;
     }
 
@@ -178,6 +185,7 @@
     .main-content {
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
     }
 
     .main-content__principal {
