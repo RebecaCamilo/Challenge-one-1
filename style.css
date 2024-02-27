@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root {
+    --color-background-principal-light: #F3F5FC;
+    --color-background-textarea: #FFFFFF00;
+    --color-encrypt-button: #0A3871;
+    --color-encrypt-button-text: #FFFFFF;
+    --color-encrypt-button-hover: #093161;
+    --color-encrypt-button-text-hover: #d1d1d1;
+    --color-dencrypt-button: #D8DFE8;
+    --color-dencrypt-button-border: #093264;
+    --color-dencrypt-button-hover: #c4cad1;
+    --color-background-result-light: #e2e2e2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +20,7 @@
 }
 
 .main-content {
-    background-color: #F3F5FC;
+    background-color: var(--color-background-claro);
     display: flex;
     min-height: 100vh;
     justify-content: space-between;
@@ -37,8 +50,8 @@
 .main-content__principal__textarea-container textarea {
     width: 100%;
     height: 100%;
-    border: 0px #FFFFFF00;
-    background-color: #F3F5FC;
+    border: 0px var(--color-background-textarea);
+    background-color: var(--color-background-claro);
     font-size: 32px;
     resize: none;
 }
@@ -64,30 +77,30 @@
 }
 
 .main-content__principal__buttons-container__encrypt {
-    color: #FFFFFF;
-    border: 1px solid #0A3871;
-    background-color: #0A3871;
+    color: var(--color-encrypt-button-text);
+    border: 1px solid var(--color-encrypt-button);
+    background-color: var(--color-encrypt-button);
     
 }
 
 .main-content__principal__buttons-container__encrypt:hover {
-    color: #d1d1d1;
-    background-color: #093161;
+    color: var(--color-encrypt-button-text-hover);
+    background-color: var(--color-encrypt-button-hover);
 }
 
 .main-content__principal__buttons-container__dencrypt {
-    color: #0A3871;
-    border: 1px solid #093264;
-    background-color: #D8DFE8;
+    color: var(--color-encrypt-button);
+    border: 1px solid var(--color-dencrypt-button-border);
+    background-color: var(--color-dencrypt-button);
 }
 
 .main-content__principal__buttons-container__dencrypt:hover {
-    border: 1px solid #0A3871;
-    background-color: #c4cad1;
+    border: 1px solid var(--color-encrypt-button);
+    background-color: var(--color-dencrypt-button-hover);
 }
 
 .main-content__result {
-    background-color: #FFFFFF;
+    background-color: var(--color-encrypt-button-text);
     margin: 40px;
     width: 400px;
     border-radius: 32px;
@@ -111,7 +124,7 @@
 .content__result__textarea {
     height: 90%;
     width: 90%;
-    border: 0px #FFFFFF00;
+    border: 0px var(--color-background-textarea);
     resize: none;
     text-align: center;
     font-family: Inter;
@@ -132,15 +145,15 @@
     height: 65px;
     font-size: 16px;
     border-radius: 22px;
-    color: #0A3871;
-    border: 1px solid #093264;
-    background-color: #D8DFE8;
+    color: var(--color-encrypt-button);
+    border: 1px solid var(--color-dencrypt-button-border);
+    background-color: var(--color-dencrypt-button);
     margin-bottom: 32px;
 }
 
 .main-content__result-button:hover {
-    border: 1px solid #0A3871;
-    background-color: #c4cad1;
+    border: 1px solid var(--color-encrypt-button);
+    background-color: var(--color-dencrypt-button-hover);
 }
 
 .main-content__result-button:active {
