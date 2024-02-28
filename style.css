@@ -23,11 +23,18 @@
     background-color: var(--color-background-claro);
     display: flex;
     min-height: 100vh;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .main-content__logo {
-    margin: 40px 40px
+    margin: 40px 0px 0px 40px
+}
+
+.main-content__logo img {
+    max-width: 70px;
+    max-height:70px;
+    width: auto;
+    height: auto;
 }
 
 .main-content__principal {
@@ -184,7 +191,7 @@
         width: 90%;
     }
 
-    img {
+    .main-content__result img {
         display: none;
     }
 
@@ -216,7 +223,7 @@
         gap: 10px;
     }
 
-    img {
+    .main-content__result img {
         display: none;
     }
 
